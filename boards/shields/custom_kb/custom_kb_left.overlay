@@ -1,5 +1,3 @@
-#include <layouts/common/minidox/36key.dtsi>
-
 / {
     chosen {
         zmk,kscan = &default_kscan;
@@ -25,6 +23,46 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)  RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&default_kscan>;
+        keys  // 36 keys (5x3+3 split)
+            // Left Side
+            = <&key_physical_attrs 0 0 100 100>    // Q
+            , <&key_physical_attrs 100 0 100 100>  // W
+            , <&key_physical_attrs 200 0 100 100>  // E
+            , <&key_physical_attrs 300 0 100 100>  // R
+            , <&key_physical_attrs 400 0 100 100>  // T
+            , <&key_physical_attrs 0 100 100 100>  // A
+            , <&key_physical_attrs 100 100 100 100> // S
+            , <&key_physical_attrs 200 100 100 100> // D
+            , <&key_physical_attrs 300 100 100 100> // F
+            , <&key_physical_attrs 400 100 100 100> // G
+            , <&key_physical_attrs 0 200 100 100>  // Z
+            , <&key_physical_attrs 100 200 100 100> // X
+            , <&key_physical_attrs 200 200 100 100> // C
+            , <&key_physical_attrs 300 200 100 100> // V
+            , <&key_physical_attrs 400 200 100 100> // B
+            , <&key_physical_attrs 200 300 100 100> // Thumb 1
+            , <&key_physical_attrs 300 300 100 100> // Thumb 2
+            , <&key_physical_attrs 400 300 100 100> // Thumb 3
+            // Right Side (Offset by 600)
+            , <&key_physical_attrs 600 0 100 100>  // Y
+            , <&key_physical_attrs 700 0 100 100>  // U
+            , <&key_physical_attrs 800 0 100 100>  // I
+            , <&key_physical_attrs 900 0 100 100>  // O
+            , <&key_physical_attrs 1000 0 100 100> // P
+            , <&key_physical_attrs 600 100 100 100> // H
+            , <&key_physical_attrs 700 100 100 100> // J
+            , <&key_physical_attrs 800 100 100 100> // K
+            , <&key_physical_attrs 900 100 100 100> // L
+            , <&key_physical_attrs 1000 100 100 100> // ;
+            , <&key_physical_attrs 600 200 100 100> // N
+            , <&key_physical_attrs 700 200 100 100> // M
+            , <&key_physical_attrs 800 200 100 100> // ,
+            , <&key_physical_attrs 900 200 100 100> // .
+            , <&key_physical_attrs 1000 200 100 100> // /
+            , <&key_physical_attrs 600 300 100 100> // Thumb 4
+            , <&key_physical_attrs 700 300 100 100> // Thumb 5
+            , <&key_physical_attrs 800 300 100 100> // Thumb 6
+            ;
     };
 
     default_kscan: kscan {
