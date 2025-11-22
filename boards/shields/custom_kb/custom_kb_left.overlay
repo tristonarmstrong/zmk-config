@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix-transform = &default_transform;
+        zephyr,console = &cdc_acm_uart;
     };
 
     default_transform: matrix_transform {
@@ -38,5 +39,11 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)
             , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
+};
+
+&zephyr_udc0 {
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
     };
 };
