@@ -1,6 +1,0 @@
-if SHELD_CORNE
-
-config ZMK_KEYBOARD_NAME
-	default "corne_left"
-
-endif
