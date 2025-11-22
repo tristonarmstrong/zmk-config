@@ -13,13 +13,17 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "Default Layer";
-// Left side only - 18 keys
+                        display-name = "Debug Layer";
+// Debug mapping to identify matrix positions:
+// Row 0: 1 2 3 4 5
+// Row 1: 6 7 8 9 0
+// Row 2: Q W E R T
+// Row 3: A S D
                         bindings = <
-   &kp Q &kp W &kp E &kp R &kp T
-   &kp A &kp S &kp D &kp F &kp G
-   &kp Z &kp X &kp C &kp V &kp B
-             &kp LGUI &mo 1 &kp SPACE
+   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
+   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+   &kp Q  &kp W  &kp E  &kp R  &kp T
+             &kp A  &kp S  &kp D
                         >;
                 };
                 lower_layer {
