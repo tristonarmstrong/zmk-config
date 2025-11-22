@@ -23,46 +23,55 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)  RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&default_kscan>;
-        keys  // 36 keys (5x3+3 split)
-            // Left Side
-            = <&key_physical_attrs 0 0 100 100>    // Q
-            , <&key_physical_attrs 100 0 100 100>  // W
-            , <&key_physical_attrs 200 0 100 100>  // E
-            , <&key_physical_attrs 300 0 100 100>  // R
-            , <&key_physical_attrs 400 0 100 100>  // T
-            , <&key_physical_attrs 0 100 100 100>  // A
-            , <&key_physical_attrs 100 100 100 100> // S
-            , <&key_physical_attrs 200 100 100 100> // D
-            , <&key_physical_attrs 300 100 100 100> // F
-            , <&key_physical_attrs 400 100 100 100> // G
-            , <&key_physical_attrs 0 200 100 100>  // Z
-            , <&key_physical_attrs 100 200 100 100> // X
-            , <&key_physical_attrs 200 200 100 100> // C
-            , <&key_physical_attrs 300 200 100 100> // V
-            , <&key_physical_attrs 400 200 100 100> // B
-            , <&key_physical_attrs 200 300 100 100> // Thumb 1
-            , <&key_physical_attrs 300 300 100 100> // Thumb 2
-            , <&key_physical_attrs 400 300 100 100> // Thumb 3
-            // Right Side (Offset by 600)
-            , <&key_physical_attrs 600 0 100 100>  // Y
-            , <&key_physical_attrs 700 0 100 100>  // U
-            , <&key_physical_attrs 800 0 100 100>  // I
-            , <&key_physical_attrs 900 0 100 100>  // O
-            , <&key_physical_attrs 1000 0 100 100> // P
-            , <&key_physical_attrs 600 100 100 100> // H
-            , <&key_physical_attrs 700 100 100 100> // J
-            , <&key_physical_attrs 800 100 100 100> // K
-            , <&key_physical_attrs 900 100 100 100> // L
-            , <&key_physical_attrs 1000 100 100 100> // ;
-            , <&key_physical_attrs 600 200 100 100> // N
-            , <&key_physical_attrs 700 200 100 100> // M
-            , <&key_physical_attrs 800 200 100 100> // ,
-            , <&key_physical_attrs 900 200 100 100> // .
-            , <&key_physical_attrs 1000 200 100 100> // /
-            , <&key_physical_attrs 600 300 100 100> // Thumb 4
-            , <&key_physical_attrs 700 300 100 100> // Thumb 5
-            , <&key_physical_attrs 800 300 100 100> // Thumb 6
-            ;
+        keys = <&k0 &k1 &k2 &k3 &k4 &k5 &k6 &k7 &k8 &k9 &k10 &k11 &k12 &k13 &k14 &k15 &k16 &k17 &k18 &k19 &k20 &k21 &k22 &k23 &k24 &k25 &k26 &k27 &k28 &k29 &k30 &k31 &k32 &k33 &k34 &k35>;
+    };
+
+    layout_keys {
+        // Left Side
+        k0: k0 { x = <0>; y = <0>; width = <100>; height = <100>; };
+        k1: k1 { x = <100>; y = <0>; width = <100>; height = <100>; };
+        k2: k2 { x = <200>; y = <0>; width = <100>; height = <100>; };
+        k3: k3 { x = <300>; y = <0>; width = <100>; height = <100>; };
+        k4: k4 { x = <400>; y = <0>; width = <100>; height = <100>; };
+        
+        k5: k5 { x = <0>; y = <100>; width = <100>; height = <100>; };
+        k6: k6 { x = <100>; y = <100>; width = <100>; height = <100>; };
+        k7: k7 { x = <200>; y = <100>; width = <100>; height = <100>; };
+        k8: k8 { x = <300>; y = <100>; width = <100>; height = <100>; };
+        k9: k9 { x = <400>; y = <100>; width = <100>; height = <100>; };
+        
+        k10: k10 { x = <0>; y = <200>; width = <100>; height = <100>; };
+        k11: k11 { x = <100>; y = <200>; width = <100>; height = <100>; };
+        k12: k12 { x = <200>; y = <200>; width = <100>; height = <100>; };
+        k13: k13 { x = <300>; y = <200>; width = <100>; height = <100>; };
+        k14: k14 { x = <400>; y = <200>; width = <100>; height = <100>; };
+        
+        k15: k15 { x = <200>; y = <300>; width = <100>; height = <100>; };
+        k16: k16 { x = <300>; y = <300>; width = <100>; height = <100>; };
+        k17: k17 { x = <400>; y = <300>; width = <100>; height = <100>; };
+
+        // Right Side (Offset X by 600)
+        k18: k18 { x = <600>; y = <0>; width = <100>; height = <100>; };
+        k19: k19 { x = <700>; y = <0>; width = <100>; height = <100>; };
+        k20: k20 { x = <800>; y = <0>; width = <100>; height = <100>; };
+        k21: k21 { x = <900>; y = <0>; width = <100>; height = <100>; };
+        k22: k22 { x = <1000>; y = <0>; width = <100>; height = <100>; };
+        
+        k23: k23 { x = <600>; y = <100>; width = <100>; height = <100>; };
+        k24: k24 { x = <700>; y = <100>; width = <100>; height = <100>; };
+        k25: k25 { x = <800>; y = <100>; width = <100>; height = <100>; };
+        k26: k26 { x = <900>; y = <100>; width = <100>; height = <100>; };
+        k27: k27 { x = <1000>; y = <100>; width = <100>; height = <100>; };
+        
+        k28: k28 { x = <600>; y = <200>; width = <100>; height = <100>; };
+        k29: k29 { x = <700>; y = <200>; width = <100>; height = <100>; };
+        k30: k30 { x = <800>; y = <200>; width = <100>; height = <100>; };
+        k31: k31 { x = <900>; y = <200>; width = <100>; height = <100>; };
+        k32: k32 { x = <1000>; y = <200>; width = <100>; height = <100>; };
+        
+        k33: k33 { x = <600>; y = <300>; width = <100>; height = <100>; };
+        k34: k34 { x = <700>; y = <300>; width = <100>; height = <100>; };
+        k35: k35 { x = <800>; y = <300>; width = <100>; height = <100>; };
     };
 
     default_kscan: kscan {
