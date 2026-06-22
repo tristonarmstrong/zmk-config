@@ -1,0 +1,28 @@
+# Python virtual environment
+.venv/
+
+# West workspace state
+.west/
+
+# Build outputs
+build/
+*.uf2
+
+# Zephyr / ZMK source dependencies (managed by west)
+zephyr/
+zmk/
+modules/
+
+# Zephyr SDK
+zephyr-sdk/
+*.tar.xz
+*.tar.gz
+
+# Zephyr cache
+.cache/
+
+# IDE / tooling
+compile_commands.json
+__pycache__/
+*.pyc
+.DS_Store

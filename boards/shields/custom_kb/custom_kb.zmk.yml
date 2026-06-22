@@ -2,14 +2,10 @@ file_format: "1"
 id: custom_kb
 name: Custom KB
 type: shield
-url: https://github.com/foostan/crkbd/
+url: https://github.com/tristonarmstrong/zmk-config
 requires: [pro_micro]
-exposes: [i2c_oled]
 features:
   - keys
-  - display
-  - underglow
-  - studio
 siblings:
   - custom_kb_left
   - custom_kb_right
