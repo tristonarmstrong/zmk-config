@@ -12,6 +12,15 @@
         zmk,matrix-transform = &default_transform;
     };
 
+    // LED on P0.06 - can be controlled via zmk-gpio-behavior module
+    // For now, LED will be available for manual control
+    leds {
+        compatible = "gpio-leds";
+        activity_led: led_0 {
+            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+        };
+    };
+
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -33,20 +42,20 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9)
         
         // Right side rows (same order as left half; not flipped)
         row-gpios
-            = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // row 0 - top
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 1 - top middle
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 2 - bottom middle
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 3 - bottom thumb
             ;
 
         // Right side columns (same order as left half; not flipped)
         col-gpios
-            = <&gpio0 24 GPIO_ACTIVE_HIGH>  // col 0 (Y)
-            , <&gpio1 0 GPIO_ACTIVE_HIGH>   // col 1 (U)
-            , <&gpio0 11 GPIO_ACTIVE_HIGH>  // col 2 (I)
-            , <&gpio1 4 GPIO_ACTIVE_HIGH>   // col 3 (O)
-            , <&gpio1 6 GPIO_ACTIVE_HIGH>  // col 4 (P)
-            , <&gpio0 22 GPIO_ACTIVE_HIGH>  // col 5 (new innermost-right)
+            = <&gpio0 24 GPIO_ACTIVE_HIGH>  // col 0 - innermost
+            , <&gpio1 0 GPIO_ACTIVE_HIGH>   // col 1
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>  // col 2
+            , <&gpio1 4 GPIO_ACTIVE_HIGH>   // col 3
+            , <&gpio1 6 GPIO_ACTIVE_HIGH>   // col 4
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>  // col 5 - outermost
             ;
     };
 };
